@@ -1,0 +1,32 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+interface SocialAnimal {
+  name: String!
+  friends: [SocialAnimal!]!
+}
+
+type User implements SocialAnimal {
+  id: Int!
+  name: String!
+  age(asOf: String!): Int!
+  bestFriend: User
+  friends: [SocialAnimal!]!
+}
+
+type Dog implements SocialAnimal {
+  name: String!
+  friends: [SocialAnimal!]!
+}
+
+type Query {
+  greeting: String!
+  farewell: String!
+  myName: String!
+  myAge(asOf: String!): Int!
+  user(id: Int!): User
+}
+
+type Mutation {
+  increment: Int!
+}
