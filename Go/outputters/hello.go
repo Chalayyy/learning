@@ -25,11 +25,11 @@ func Hello(name string, language string) string {
 
 func greeting(language string) (prefix string) {
 	switch language {
-	case "Spanish":
+	case spanish:
 		prefix = spanishGreeting
-	case "French":
+	case french:
 		prefix = frenchGreeting
-	case "German":
+	case german:
 		prefix = germanGreeting
 	default:
 		prefix = defaultGreeting
